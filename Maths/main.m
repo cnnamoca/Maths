@@ -11,20 +11,26 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool
     {
-        char play;
-        
-        printf ("Would you like to play a math game? y/n: ")
-        scanf ("%c", play);
-        
-        while (play == 'y')
-        {
+
+            char someCString[255];
         
             printf ("input a string: ");
-            fgets (inputChars, 255, stdin);
-            printf ("your string is: %s \n", inputChars);
+        
+            fgets (someCString, 255, stdin);
+        
+            NSString *newString = [NSString stringWithCString: someCString
+                               encoding:NSUTF8StringEncoding];
+        
+            NSCharacterSet *newCharSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        
+            NSString *anotherString = [newString stringByTrimmingCharactersInSet: newCharSet];
+        
+            NSLog (@"%@", anotherString);
+            
+        
 
             
-        };
+
     }
     return 0;
 }
