@@ -9,5 +9,21 @@
 #import "AdditionQuestion.h"
 
 @implementation AdditionQuestion
-
+    
+- (instancetype)init
+    {
+        self = [super init];
+        if (self) {
+            
+            long a = arc4random() % 4;
+            long b = arc4random() % 4;
+            
+            NSString *question = [NSString stringWithFormat:@"%ld + %ld = ?", a, b];
+            NSLog (@"%@", question);
+            
+            self.answer = (NSInteger)(a + b);
+            
+        }
+        return self;
+    }
 @end

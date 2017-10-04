@@ -1,5 +1,5 @@
 //
-//  AdditionQuestion.h
+//  InputHandler.h
 //  Maths
 //
 //  Created by Carlo Namoca on 2017-10-03.
@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AdditionQuestion : NSObject
-@property (nonatomic) NSString *question;
-@property (nonatomic) NSInteger answer;
-    
+@interface InputHandler : NSObject
+
+- (NSString *) takeInput;
 
 @end
